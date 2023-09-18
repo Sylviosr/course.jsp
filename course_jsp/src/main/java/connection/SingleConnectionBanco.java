@@ -9,7 +9,7 @@ public class SingleConnectionBanco {
 	private static String user = "root";
 	private static String senha = "ester2009";
 	private static Connection connection = null;
-	
+	/*teste*/
 	public static Connection getConnection() {
 		return connection;
 	}
