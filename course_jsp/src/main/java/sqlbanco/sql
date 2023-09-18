@@ -1,0 +1,19 @@
+DROP TABLE IF EXISTS model_login;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE model_login (
+  login varchar(200) NOT NULL,
+  password varchar(200) NOT NULL,
+  PRIMARY KEY (login),
+  UNIQUE KEY login_UNIQUE (login)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table model_login
+--
+
+LOCK TABLES model_login WRITE;
+/*!40000 ALTER TABLE model_login DISABLE KEYS */;
+/*!40000 ALTER TABLE model_login ENABLE KEYS */;
+UNLOCK TABLES;
