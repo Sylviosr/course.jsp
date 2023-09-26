@@ -51,6 +51,7 @@ public class ServletLogin extends HttpServlet {
 		   if(login != null && !login.isEmpty() && senha != null && ! senha.isEmpty()) {
 			   
 			   ModelLogin modelLogin = new ModelLogin();
+			   
 			   modelLogin.setLogin(login);
 			   modelLogin.setSenha(senha); 
 			   
