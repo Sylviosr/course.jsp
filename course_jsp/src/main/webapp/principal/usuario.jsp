@@ -43,7 +43,7 @@
                                                     <div class="card-block">
                                                         <h4 class="sub-title">Cadastro de Usuários</h4>
                                                         
-                                           			    <form class="form-material" action="<%= request.getContextPath() %>/ServletUsuarioController" method="post">
+                                           			    <form class="form-material" action="<%= request.getContextPath() %>/ServletUsuarioController" method="post" id="formUser">
                                                             <div class="form-group form-default">
                                                                 <input type="text" name="id" id="id" class="form-control" readonly="readonly" value="${modelLogin.id}">
                                                                 <span class="form-bar"></span>
@@ -70,7 +70,7 @@
                                                                 <label class="float-label">Senha</label>
                                                             </div>
                                                             
-                                                          <button class="btn btn-primary btn-round waves-effect waves-light">Novo</button>
+                                                          <button class="btn btn-primary btn-round waves-effect waves-light" onclick="Limparform();">Novo</button>
             											  <button class="btn btn-success btn-round waves-effect waves-light">Salvar</button>
             											  <button class="btn btn-info btn-round waves-effect waves-light">Excluir</button>
                                                         </form>
@@ -91,6 +91,19 @@
     </div>
 
 <jsp:include page="javascriptfile.jsp"></jsp:include>
+
+<script type="text/javascript">
+
+function limparform() {
+	var elementos = document.getElementById("formUser").elements;/*Retorna os elementos html dentro do form*/
+	
+	for (p = 0; p < elementos.length; p ++){
+		elementos[p].value = '';
+		
+	}
+}
+
+</script>
 
 </body>
 
