@@ -17,3 +17,26 @@ LOCK TABLES model_login WRITE;
 /*!40000 ALTER TABLE model_login DISABLE KEYS */;
 /*!40000 ALTER TABLE model_login ENABLE KEYS */;
 UNLOCK TABLES;
+/*----------------------------------------------*/;
+/*Script do Banco de Dados no MySQL*/
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+CREATE TABLE `model_login` (
+  `id` bigint UNSIGNED NOT NULL,
+  `login` varchar(200) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `senha` varchar(200) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `nome` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
+  `email` varchar(100) NOT NULL,
+  `useradmin` char(1) NOT NULL DEFAULT 'F',
+  `usuario_id` bigint NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+INSERT INTO `model_login` (`id`, `login`, `senha`, `nome`, `email`, `useradmin`, `usuario_id`) VALUES(1, 'admin', 'admin', 'fulano', 'fulano@email.com', 'T', 0);
+ALTER TABLE `model_login`
+  ADD PRIMARY KEY (`login`),
+  ADD UNIQUE KEY `login_UNIQUE` (`login`),
+  ADD UNIQUE KEY `id` (`id`);
+ALTER TABLE `model_login`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+COMMIT;
